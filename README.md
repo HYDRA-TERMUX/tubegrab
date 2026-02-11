@@ -691,13 +691,6 @@ If you'd like to support development:
 20](https://www.paypal.com/paypalme/techcochi/20)
 
 ---
-
-## 📞 Contact
-
-- GitHub: [@HYDRA-TERMUX](https://github.com/yourusername)
-- Email: hydra.termux@example.com
-- Twitter: [@HYDRA-TERMUX](https://twitter.com/yourusername)
-
 ---
 
 <div align="center">
