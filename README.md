@@ -683,6 +683,13 @@ Found a bug? [Open an issue](https://github.com/HYDRA-TERMUX/tubegrab/issues)
 If you'd like to support development:
 - ☕ [Buy me a coffee](https://www.paypal.com/paypalme/techcochi)
 
+[💵$10](https://www.paypal.com/paypalme/techcochi/10)
+
+[💵$15](https://www.paypal.com/paypalme/techcochi/15)
+
+[💵$
+20](https://www.paypal.com/paypalme/techcochi/20)
+
 ---
 
 ## 📞 Contact
