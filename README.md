@@ -104,7 +104,7 @@ chmod +x youtube-downloader.sh
 ### Method 3: Quick Install (One-liner)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/HYDRA-TERMUX/tubegrab/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/HYDRA-TERMUX/tubegrab/main/quick-install.sh | bash
 ```
 
 ---
