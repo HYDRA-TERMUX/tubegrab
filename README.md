@@ -6,10 +6,10 @@
 
 <br><br>
 
-![GitHub stars](https://img.shields.io/github/stars/HYDRA-TERMUX/tubegrab?style=for-the-badge&logo=github&color=ff0066)
-![GitHub forks](https://img.shields.io/github/forks/HYDRA-TERMUX/tubegrab?style=for-the-badge&logo=github&color=00d4ff)
-![GitHub issues](https://img.shields.io/github/issues/HYDRA-TERMUX/tubegrab?style=for-the-badge&logo=github&color=ffcc00)
-![GitHub license](https://img.shields.io/github/license/HYDRA-TERMUX/tubegrab?style=for-the-badge&color=00ff88)
+![GitHub stars](https://img.shields.io/github/stars/HYDRA-TERMUX/tubegrab?style=for-the-badge&logo=github)
+![GitHub forks](https://img.shields.io/github/forks/HYDRA-TERMUX/tubegrab?style=for-the-badge&logo=github)
+![GitHub issues](https://img.shields.io/github/issues/HYDRA-TERMUX/tubegrab?style=for-the-badge&logo=github)
+![GitHub license](https://img.shields.io/github/license/HYDRA-TERMUX/tubegrab?style=for-the-badge)
 
 [![Made with Bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg?style=flat-square)](https://www.gnu.org/software/bash/)
 [![Works on Termux](https://img.shields.io/badge/Works%20on-Termux-00d4ff?style=flat-square&logo=android)](https://termux.com/)
