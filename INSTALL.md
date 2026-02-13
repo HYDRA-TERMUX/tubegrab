@@ -1,5 +1,19 @@
 # 🚀 TubeGrab Installation Guide
 
+## ⚡ Quick Install (ONE COMMAND) - EASIEST!
+
+Copy and paste this in Termux:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/HYDRA-TERMUX/tubegrab/main/setup.sh)
+```
+
+**Done!** The script handles everything automatically. 🎉
+
+---
+
+## Alternative Installation Methods
+
 ## Quick Install (One Command)
 
 Copy and paste this in Termux:
