@@ -87,53 +87,68 @@ download_video() {
     local url=$1
     local quality=$2
     
+    # Create directories if they don't exist
+    mkdir -p /sdcard/TubeGrab/Video
+    
     echo -e "${CYAN}${BOLD}[*] Starting video download...${NC}"
     echo -e "${YELLOW}[*] Quality: $quality${NC}\n"
     
     case $quality in
         1)
-            echo -e "${GREEN}[*] Downloading Best Quality (MP4)...${NC}"
-            yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" \
+            echo -e "${GREEN}[*] Downloading Best Quality (4K/8K/1440p/1080p - Maximum Available)...${NC}"
+            yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio/best" \
                    --merge-output-format mp4 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/Video/%(title)s.%(ext)s" "$url"
             ;;
         2)
-            echo -e "${GREEN}[*] Downloading 1080p (MP4)...${NC}"
-            yt-dlp -f "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080]" \
+            echo -e "${GREEN}[*] Downloading 4K (2160p) Quality...${NC}"
+            yt-dlp -f "bestvideo[height<=2160][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=2160]+bestaudio/best[height<=2160]" \
                    --merge-output-format mp4 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/Video/%(title)s.%(ext)s" "$url"
             ;;
         3)
-            echo -e "${GREEN}[*] Downloading 720p (MP4)...${NC}"
-            yt-dlp -f "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=720]" \
+            echo -e "${GREEN}[*] Downloading 1440p (2K) Quality...${NC}"
+            yt-dlp -f "bestvideo[height<=1440][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=1440]+bestaudio/best[height<=1440]" \
                    --merge-output-format mp4 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/Video/%(title)s.%(ext)s" "$url"
             ;;
         4)
-            echo -e "${GREEN}[*] Downloading 480p (MP4)...${NC}"
-            yt-dlp -f "bestvideo[height<=480][ext=mp4]+bestaudio[ext=m4a]/best[height<=480]" \
+            echo -e "${GREEN}[*] Downloading 1080p (Full HD) Quality...${NC}"
+            yt-dlp -f "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=1080]+bestaudio/best[height<=1080]" \
                    --merge-output-format mp4 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/Video/%(title)s.%(ext)s" "$url"
             ;;
         5)
-            echo -e "${GREEN}[*] Downloading 360p (MP4)...${NC}"
-            yt-dlp -f "bestvideo[height<=360][ext=mp4]+bestaudio[ext=m4a]/best[height<=360]" \
+            echo -e "${GREEN}[*] Downloading 720p (HD) Quality...${NC}"
+            yt-dlp -f "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=720]+bestaudio/best[height<=720]" \
                    --merge-output-format mp4 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/Video/%(title)s.%(ext)s" "$url"
             ;;
         6)
+            echo -e "${GREEN}[*] Downloading 480p (SD) Quality...${NC}"
+            yt-dlp -f "bestvideo[height<=480][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=480]+bestaudio/best[height<=480]" \
+                   --merge-output-format mp4 \
+                   -o "/sdcard/TubeGrab/Video/%(title)s.%(ext)s" "$url"
+            ;;
+        7)
+            echo -e "${GREEN}[*] Downloading 360p (Low) Quality...${NC}"
+            yt-dlp -f "bestvideo[height<=360][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=360]+bestaudio/best[height<=360]" \
+                   --merge-output-format mp4 \
+                   -o "/sdcard/TubeGrab/Video/%(title)s.%(ext)s" "$url"
+            ;;
+        8)
             echo -e "${GREEN}[*] Showing all available formats...${NC}\n"
             show_formats "$url"
             echo -e "${YELLOW}Enter format code (e.g., 137+140 for video+audio): ${NC}"
             read format_code
             yt-dlp -f "$format_code" --merge-output-format mp4 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/Video/%(title)s.%(ext)s" "$url"
             ;;
     esac
     
     if [ $? -eq 0 ]; then
         echo -e "\n${GREEN}${BOLD}[✓] Video downloaded successfully!${NC}"
-        echo -e "${CYAN}[*] Location: ~/storage/downloads/${NC}"
+        echo -e "${CYAN}[*] Location: /sdcard/TubeGrab/Video/${NC}"
     else
         echo -e "\n${RED}${BOLD}[✗] Download failed!${NC}"
     fi
@@ -144,6 +159,9 @@ download_mp3() {
     local url=$1
     local quality=$2
     
+    # Create directories if they don't exist
+    mkdir -p /sdcard/TubeGrab/MP3
+    
     echo -e "${CYAN}${BOLD}[*] Starting MP3 download...${NC}"
     echo -e "${YELLOW}[*] Quality: $quality${NC}\n"
     
@@ -151,33 +169,33 @@ download_mp3() {
         1)
             echo -e "${GREEN}[*] Downloading Best Quality MP3 (320kbps)...${NC}"
             yt-dlp -x --audio-format mp3 --audio-quality 0 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/MP3/%(title)s.%(ext)s" "$url"
             ;;
         2)
             echo -e "${GREEN}[*] Downloading High Quality MP3 (256kbps)...${NC}"
             yt-dlp -x --audio-format mp3 --audio-quality 2 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/MP3/%(title)s.%(ext)s" "$url"
             ;;
         3)
             echo -e "${GREEN}[*] Downloading Medium Quality MP3 (192kbps)...${NC}"
             yt-dlp -x --audio-format mp3 --audio-quality 4 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/MP3/%(title)s.%(ext)s" "$url"
             ;;
         4)
             echo -e "${GREEN}[*] Downloading Standard Quality MP3 (128kbps)...${NC}"
             yt-dlp -x --audio-format mp3 --audio-quality 5 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/MP3/%(title)s.%(ext)s" "$url"
             ;;
         5)
             echo -e "${GREEN}[*] Downloading Low Quality MP3 (96kbps)...${NC}"
             yt-dlp -x --audio-format mp3 --audio-quality 7 \
-                   -o "~/storage/downloads/%(title)s.%(ext)s" "$url"
+                   -o "/sdcard/TubeGrab/MP3/%(title)s.%(ext)s" "$url"
             ;;
     esac
     
     if [ $? -eq 0 ]; then
         echo -e "\n${GREEN}${BOLD}[✓] MP3 downloaded successfully!${NC}"
-        echo -e "${CYAN}[*] Location: ~/storage/downloads/${NC}"
+        echo -e "${CYAN}[*] Location: /sdcard/TubeGrab/MP3/${NC}"
     else
         echo -e "\n${RED}${BOLD}[✗] Download failed!${NC}"
     fi
@@ -221,14 +239,16 @@ main_menu() {
                 echo -e "${BOLD}${WHITE}║                   VIDEO QUALITY OPTIONS                   ║${NC}"
                 echo -e "${BOLD}${WHITE}╚═══════════════════════════════════════════════════════════╝${NC}\n"
                 
-                echo -e "${GRAD1}  [1]${NC} ${GREEN}Best Quality (Highest Available)${NC}"
-                echo -e "${GRAD2}  [2]${NC} ${GREEN}1080p (Full HD)${NC}"
-                echo -e "${GRAD3}  [3]${NC} ${YELLOW}720p (HD)${NC}"
-                echo -e "${GRAD4}  [4]${NC} ${YELLOW}480p (SD)${NC}"
-                echo -e "${GRAD5}  [5]${NC} ${YELLOW}360p (Low)${NC}"
-                echo -e "${MAGENTA}  [6]${NC} ${CYAN}Custom Format (Show all formats)${NC}\n"
+                echo -e "${GRAD1}  [1]${NC} ${GREEN}${BOLD}Best Quality (4K/8K/2K - Maximum Available)${NC}"
+                echo -e "${GRAD2}  [2]${NC} ${GREEN}4K (2160p - Ultra HD)${NC}"
+                echo -e "${GRAD3}  [3]${NC} ${GREEN}2K (1440p - Quad HD)${NC}"
+                echo -e "${GRAD4}  [4]${NC} ${YELLOW}1080p (Full HD)${NC}"
+                echo -e "${GRAD5}  [5]${NC} ${YELLOW}720p (HD Ready)${NC}"
+                echo -e "${MAGENTA}  [6]${NC} ${YELLOW}480p (SD)${NC}"
+                echo -e "${CYAN}  [7]${NC} ${YELLOW}360p (Low Quality)${NC}"
+                echo -e "${WHITE}  [8]${NC} ${CYAN}Custom Format (Show all formats)${NC}\n"
                 
-                echo -e "${CYAN}${BOLD}Select quality [1-6]: ${NC}"
+                echo -e "${CYAN}${BOLD}Select quality [1-8]: ${NC}"
                 read video_quality
                 
                 echo ""
@@ -307,12 +327,16 @@ main_menu() {
     done
 }
 
-# Check storage permission
+# Check storage permission and create directories
 if [ ! -d ~/storage/downloads ]; then
     echo -e "${YELLOW}[!] Setting up storage access...${NC}"
     termux-setup-storage
     sleep 2
 fi
+
+# Create TubeGrab directories
+mkdir -p /sdcard/TubeGrab/Video
+mkdir -p /sdcard/TubeGrab/MP3
 
 # Run dependency check on first launch
 check_dependencies
