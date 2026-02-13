@@ -12,6 +12,24 @@ Get TubeGrab running in 5 minutes!
 
 ## Installation Steps
 
+### ⚡ Super Quick Install (ONE COMMAND!)
+
+The fastest way - just copy and paste:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/HYDRA-TERMUX/tubegrab/main/setup.sh)
+```
+
+**That's it!** 🎉 The script will:
+- Install all dependencies automatically
+- Download TubeGrab
+- Setup everything
+- Ask if you want to run it immediately
+
+---
+
+### Alternative: Step-by-Step Installation
+
 ### Step 1: Install Termux
 
 Download Termux from one of these sources:
