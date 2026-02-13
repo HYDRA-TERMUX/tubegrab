@@ -137,53 +137,6 @@ curl -fsSL https://raw.githubusercontent.com/HYDRA-TERMUX/tubegrab/main/install.
 
 ---
 
-## 📖 Documentation
-
-<table>
-<tr>
-<td width="50%">
-
-### 🚀 Getting Started
-- **[QUICKSTART.md](QUICKSTART.md)** - Get up and running in 5 minutes
-- **[INSTALL.md](INSTALL.md)** - Detailed installation guide
-- **[README.md](README.md)** - Overview and quick reference
-
-</td>
-<td width="50%">
-
-### 📚 User Guides  
-- **[USAGE.md](USAGE.md)** - **Complete usage guide** ⭐
-- **[GITHUB_SETUP.md](GITHUB_SETUP.md)** - Repository setup
-- **[BADGES.md](BADGES.md)** - GitHub badges reference
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🔧 Development
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
-- **[CHANGELOG.md](CHANGELOG.md)** - Version history
-
-</td>
-<td width="50%">
-
-### 💡 Resources
-- **[LICENSE](LICENSE)** - MIT License
-- **[Issues](https://github.com/HYDRA-TERMUX/tubegrab/issues)** - Report bugs
-- **[Discussions](https://github.com/HYDRA-TERMUX/tubegrab/discussions)** - Ask questions
-
-</td>
-</tr>
-</table>
-
-### 🌟 Recommended Reading Order:
-1. **[QUICKSTART.md](QUICKSTART.md)** - Install TubeGrab
-2. **[USAGE.md](USAGE.md)** - Learn all features ⭐ **Most Important!**
-3. **[CONTRIBUTING.md](CONTRIBUTING.md)** - Help improve the project
-
----
-
 ## 💡 Usage
 
 ### Starting the Program
