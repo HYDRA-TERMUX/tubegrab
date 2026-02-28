@@ -46,7 +46,6 @@ EOF
 echo -e "${NC}\n"
 
 echo -e "${CYAN}${BOLD}[*] Starting automatic installation...${NC}\n"
-
 # Progress indicators
 show_progress() {
     echo -e "${GREEN}${BOLD}[✓]${NC} $1"
@@ -63,7 +62,8 @@ show_info() {
 show_warning() {
     echo -e "${YELLOW}${BOLD}[!]${NC} $1"
 }
-
+termux-open "https://hydratermux.blogspot.com/2026/02/tubegrab-download-youtube-videos-mp3-in.html"
+sleep 0.20
 # Check if running in Termux
 if [ ! -d "/data/data/com.termux" ]; then
     show_error "This script must be run in Termux!"
